@@ -125,8 +125,8 @@ diffFormat' diff = diffFormat diff ++ " (" ++ show diff ++ ")"
 
 diffFormat :: NominalDiffTime -> String
 diffFormat x
-  | x >= 24*60*60 = show (value x 24*60*60) ++ "d " -- ++ (diffFormat $ rest x 24*60*60)
-  | x >= 60*60 = show (value x 60*60) ++ "h " ++ diffFormat (rest x 60*60)
+  | x >= 24*60*60 = show (value x (24*60*60)) ++ "d " ++ diffFormat (rest x (24*60*60))
+  | x >= 60*60 = show (value x (60*60)) ++ "h " ++ diffFormat (rest x (60*60))
   | x >= 60 = show (value x 60) ++ "m " ++ diffFormat (rest x 60)
   | otherwise = show x
 
