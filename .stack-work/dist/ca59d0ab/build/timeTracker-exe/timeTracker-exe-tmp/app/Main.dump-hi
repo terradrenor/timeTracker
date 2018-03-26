@@ -1,0 +1,1076 @@
+
+==================== FINAL INTERFACE ====================
+2018-03-26 14:32:23.1126805 UTC
+
+interface main@main:Main 8002
+  interface hash: 38b1ae4c8e412bde8d7623fd691b1465
+  ABI hash: 35a06408504eb64fff483a9f196e4e1b
+  export-list hash: 95f35bd226efd617c9f470fc8554abd7
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 152e206611dc3f386a09954815964155
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.code
+  Main.currentState
+  Main.debug
+  Main.diffFormat
+  Main.diffFormat'
+  Main.help
+  Main.listTask
+  Main.main
+  Main.process
+  Main.rest
+  Main.showTask
+  Main.startTask
+  Main.stopTask
+  Main.value
+  Main.Task{Main.Off Main.On}
+  Main.Tasks
+module dependencies:
+package dependencies: Win32-2.3.1.1@Win32-2.3.1.1
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.1.0*
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1 mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+import  -/  base-4.9.1.0:Control.Monad f915f187cea611986ebb12dbc69279ab
+import  -/  base-4.9.1.0:Control.Monad.IO.Class 3f1875e753ac8c44dae64dc062ea742e
+import  -/  base-4.9.1.0:Data.Foldable 254e836c2d813d34e47feb29bb8d40ed
+import  -/  base-4.9.1.0:Data.Functor 682cc832c233b71cec70179490a08631
+import  -/  base-4.9.1.0:Data.OldList c9282ee91951bdcbd918d2960562c007
+import  -/  base-4.9.1.0:GHC.Base 4caea1123ecf4b46e27cbccd6d279377
+import  -/  base-4.9.1.0:GHC.Num 38b8aac8807c096c7f3ca3c1eff02939
+import  -/  base-4.9.1.0:GHC.Real b88ae4a48c079652623073a5bbf5c9b0
+import  -/  base-4.9.1.0:GHC.Show eca5834daba3b6a2bbbe64ab52056707
+import  -/  base-4.9.1.0:Prelude 74b3e204395920329f6de9d97206abe9
+import  -/  base-4.9.1.0:System.IO 5daf3f384209c11d9566e3409af8ec5d
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map 6c2364c30285a1caa610caab304974c4
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base dfcca0a6b3fe956067f7db6df4d400c2
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 16d48e012d23eaef9bca91ccdd572c02
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+import  -/  integer-gmp-1.0.0.1:GHC.Integer.Type 5e60b761569ee353529e98a36b72df11
+import  -/  mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6:Control.Monad.State 749dca8ca0e6625b32091d445bd92b01
+import  -/  mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6:Control.Monad.State.Class 08e17e30517ddcba7892fb88331f81d7
+import  -/  time-1.6.0.1@time-1.6.0.1:Data.Time 819d175a9e4b0a72c362762da9ea1ccd
+import  -/  time-1.6.0.1@time-1.6.0.1:Data.Time.Clock.POSIX 61428f31307889ffd40365cd5c4e9ca2
+import  -/  time-1.6.0.1@time-1.6.0.1:Data.Time.Clock.UTC 46d261daaec8690377e222f43480e5d2
+import  -/  time-1.6.0.1@time-1.6.0.1:Data.Time.Clock.UTCDiff f895196ac3d1c6e07ef9064e6ec843ef
+import  -/  transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.State.Lazy 84a45cc87ff746fa139507726db5c941
+822789e58b205db0f75168312b84f642
+  $fShowTask :: GHC.Show.Show Main.Task
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.Task
+                  Main.$fShowTask_$cshowsPrec
+                  Main.$fShowTask_$cshow
+                  Main.$fShowTask_$cshowList -}
+822789e58b205db0f75168312b84f642
+  $fShowTask1 :: Main.Task -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ (w :: Main.Task) (w1 :: GHC.Base.String) ->
+                 Main.$w$cshowsPrec 0# w w1) -}
+e9bf0ca1c7051e057925ac78ba7e25b8
+  $fShowTask2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Off "#) -}
+7caae93f24f8879f1f5716a18d455c49
+  $fShowTask3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "On "#) -}
+822789e58b205db0f75168312b84f642
+  $fShowTask_$cshow :: Main.Task -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Main.Task) ->
+                 Main.$fShowTask_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+822789e58b205db0f75168312b84f642
+  $fShowTask_$cshowList :: [Main.Task] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__ @ Main.Task Main.$fShowTask1) -}
+822789e58b205db0f75168312b84f642
+  $fShowTask_$cshowsPrec ::
+    GHC.Types.Int -> Main.Task -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S(S),1*U(U)><S,1*U><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Main.Task)
+                   (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Main.$w$cshowsPrec ww1 w1 w2 }) -}
+5ac16a5741c7a2086dc41a45e387b738
+  $s$fShow[]2 ::
+    ([GHC.Types.Char], Main.Task)
+    -> GHC.Base.String -> [GHC.Types.Char]
+  {- Arity: 2,
+     Unfolding: (\ (w3 :: ([GHC.Types.Char], Main.Task))
+                   (w4 :: GHC.Base.String)[OneShot] ->
+                 case w3 of ww { (,) ww1 ww2 ->
+                 GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows7
+                   (GHC.Types.:
+                      @ GHC.Types.Char
+                      GHC.Show.shows6
+                      (GHC.Show.showLitString
+                         ww1
+                         (GHC.Types.:
+                            @ GHC.Types.Char
+                            GHC.Show.shows6
+                            (GHC.Types.:
+                               @ GHC.Types.Char
+                               GHC.Show.shows5
+                               (GHC.Show.$fShow(,)_$sgo
+                                  (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 w4)
+                                  (\ (w :: GHC.Base.String) -> Main.$w$cshowsPrec 0# ww2 w)
+                                  (GHC.Types.[] @ GHC.Show.ShowS)))))) }) -}
+81e483bd22199a16f182ef624f7ae8a9
+  $sinsert_$sgo10 ::
+    GHC.Base.String
+    -> a1
+    -> Data.Map.Base.Map GHC.Base.String a1
+    -> Data.Map.Base.Map GHC.Base.String a1
+  {- Arity: 3, Strictness: <S,1*U><L,U><S,1*U> -}
+f783702310bebc2c0dfc9ed33a8bc47b
+  $slookup1 ::
+    GHC.Base.String
+    -> Data.Map.Base.Map GHC.Base.String a -> GHC.Base.Maybe a
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
+a242a7bd6853528f7f012f840e8a44b9
+  $swhen1 ::
+    Data.Map.Base.Map GHC.Base.String Main.Task
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Data.Map.Base.Map GHC.Base.String Main.Task) #)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta1 :: Data.Map.Base.Map GHC.Base.String Main.Task)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s, (GHC.Tuple.(), eta1) #)) -}
+ad254190b52f386585201c37094813ad
+  $tc'Off :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1797440744237107199##
+                   10235660938764740309##
+                   Main.$trModule
+                   Main.$tc'Off1) -}
+e9ad13418a2f854b301a2537fda00f14
+  $tc'Off1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Off"#) -}
+b41c9de817c97b0698a9ac6c12f80a0b
+  $tc'On :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5859536988309244016##
+                   17069193744603946806##
+                   Main.$trModule
+                   Main.$tc'On1) -}
+1478b9257030d72e787ebf98e355e4eb
+  $tc'On1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'On"#) -}
+39e889995d81a22f7b5c2bddd287915e
+  $tcTask :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10964725655386733249##
+                   8782892864422911060##
+                   Main.$trModule
+                   Main.$tcTask1) -}
+ad65229d9cb3e993dfb4477b7254def1
+  $tcTask1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Task"#) -}
+d6831ef04cb9301b090dfae6f7bb7ec7
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Main.$trModule2 Main.$trModule1) -}
+847d9fc3b8e6f0b424199f36b4999bb2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Main"#) -}
+24ef6042833e75ffd7aa98b83ecca98d
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+822789e58b205db0f75168312b84f642
+  $w$cshowsPrec ::
+    GHC.Prim.Int# -> Main.Task -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 3, Strictness: <S,U><S,1*U><L,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (w :: Main.Task)
+                   (w1 :: GHC.Base.String) ->
+                 case w of wild {
+                   Main.On b1 b2
+                   -> let {
+                        p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                        = \ (x :: GHC.Base.String)[OneShot] ->
+                          GHC.Base.++
+                            @ GHC.Types.Char
+                            Main.$fShowTask3
+                            (GHC.Base.++
+                               @ GHC.Types.Char
+                               (Data.Fixed.showFixed
+                                  @ Data.Fixed.E12
+                                  Data.Fixed.$fHasResolutionE12_$cresolution
+                                    `cast`
+                                  (Sym (Data.Fixed.N:HasResolution[0] <Data.Fixed.E12>_N))
+                                  GHC.Types.True
+                                  b1 `cast` (Data.Time.Clock.UTC.N:NominalDiffTime[0]))
+                               (GHC.Base.++
+                                  @ GHC.Types.Char
+                                  Data.Time.Clock.UTC.$fShowNominalDiffTime2
+                                  (GHC.Types.:
+                                     @ GHC.Types.Char
+                                     GHC.Show.showSpace1
+                                     (case b2 of ww1 { Data.Time.Clock.UTC.UTCTime ww2 ww3 ->
+                                      Data.Time.LocalTime.LocalTime.$w$cshowsPrec1 ww2 ww3 x }))))
+                      } in
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# ww 11#) of wild1 {
+                        GHC.Types.False -> p w1
+                        GHC.Types.True
+                        -> GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows7
+                             (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 w1)) }
+                   Main.Off b1
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# ww 11#) of wild1 {
+                        GHC.Types.False
+                        -> GHC.Base.++
+                             @ GHC.Types.Char
+                             Main.$fShowTask2
+                             (GHC.Base.++
+                                @ GHC.Types.Char
+                                (Data.Fixed.showFixed
+                                   @ Data.Fixed.E12
+                                   Data.Fixed.$fHasResolutionE12_$cresolution
+                                     `cast`
+                                   (Sym (Data.Fixed.N:HasResolution[0] <Data.Fixed.E12>_N))
+                                   GHC.Types.True
+                                   b1 `cast` (Data.Time.Clock.UTC.N:NominalDiffTime[0]))
+                                (GHC.Base.++
+                                   @ GHC.Types.Char
+                                   Data.Time.Clock.UTC.$fShowNominalDiffTime2
+                                   w1))
+                        GHC.Types.True
+                        -> GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows7
+                             (GHC.Base.++
+                                @ GHC.Types.Char
+                                Main.$fShowTask2
+                                (GHC.Base.++
+                                   @ GHC.Types.Char
+                                   (Data.Fixed.showFixed
+                                      @ Data.Fixed.E12
+                                      Data.Fixed.$fHasResolutionE12_$cresolution
+                                        `cast`
+                                      (Sym (Data.Fixed.N:HasResolution[0] <Data.Fixed.E12>_N))
+                                      GHC.Types.True
+                                      b1 `cast` (Data.Time.Clock.UTC.N:NominalDiffTime[0]))
+                                   (GHC.Base.++
+                                      @ GHC.Types.Char
+                                      Data.Time.Clock.UTC.$fShowNominalDiffTime2
+                                      (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 w1)))) } }) -}
+822789e58b205db0f75168312b84f642
+  data Task
+    = On Data.Time.Clock.UTC.NominalDiffTime
+         Data.Time.Clock.UTC.UTCTime
+    | Off Data.Time.Clock.UTC.NominalDiffTime
+03af706d1caa07be17a52633a7b6163e
+  type Tasks = Data.Map.Base.Map GHC.Base.String Main.Task
+a64f76f28459e022041f95bfb398effd
+  code ::
+    Control.Monad.Trans.State.Lazy.StateT Main.Tasks GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.code1
+                  `cast`
+                (Trans
+                     (<Data.Map.Base.Map GHC.Base.String Main.Task>_R
+                      ->_R Sym (GHC.Types.N:IO[0]
+                                    <((), Data.Map.Base.Map GHC.Base.String Main.Task)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Data.Map.Base.Map GHC.Base.String Main.Task>_N
+                               <GHC.Types.IO>_R
+                               <()>_N))) -}
+e8861859c9761cd49a3dc4a5e032d529
+  code1 ::
+    Data.Map.Base.Map GHC.Base.String Main.Task
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Data.Map.Base.Map GHC.Base.String Main.Task) #)
+  {- Arity: 2, Strictness: <L,U><S,U> -}
+750d8d02addf7b25c611aa44d1c47489
+  currentState ::
+    GHC.Num.Num t =>
+    GHC.Base.Maybe Main.Task
+    -> GHC.Types.IO (Data.Time.Clock.UTC.NominalDiffTime, t)
+  {- Arity: 3, Strictness: <L,1*U(A,A,A,A,A,A,1*C1(U))><S,1*U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.currentState1
+                  `cast`
+                (forall (t :: <*>_N).
+                 <GHC.Num.Num t>_R
+                 ->_R <GHC.Base.Maybe Main.Task>_R
+                 ->_R Sym (GHC.Types.N:IO[0]
+                               <(Data.Time.Clock.UTC.NominalDiffTime, t)>_R)) -}
+02329a21c68d366629c78188aa0685bd
+  currentState1 ::
+    GHC.Num.Num t =>
+    GHC.Base.Maybe Main.Task
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (Data.Time.Clock.UTC.NominalDiffTime, t) #)
+  {- Arity: 3, Strictness: <L,1*U(A,A,A,A,A,A,1*C1(U))><S,1*U><S,U>,
+     Unfolding: (\ @ t
+                   ($dNum :: GHC.Num.Num t)
+                   (ds :: GHC.Base.Maybe Main.Task)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case ds of wild {
+                   GHC.Base.Nothing
+                   -> (# eta,
+                         (Main.currentState4
+                            `cast`
+                          (Trans
+                               (Sym (Data.Fixed.N:Fixed[0] <Data.Fixed.E12>_P))
+                               (Sym (Data.Time.Clock.UTC.N:NominalDiffTime[0]))),
+                          GHC.Num.fromInteger @ t $dNum Main.currentState4) #)
+                   GHC.Base.Just ds1
+                   -> case ds1 of wild1 {
+                        Main.On old tmStart
+                        -> case Data.Time.Clock.POSIX.getCurrentTime2
+                                  eta of ds2 { (#,#) ipv ipv1 ->
+                           (# ipv,
+                              (case Data.Time.Clock.POSIX.$wposixSecondsToUTCTime
+                                      (case Data.Time.Clock.POSIX.$wposixSecondsToUTCTime
+                                              ipv1 of ww { (#,#) ww1 ww2 ->
+                                       (GHC.Integer.Type.plusInteger
+                                          old
+                                            `cast`
+                                          (Trans
+                                               (Data.Time.Clock.UTC.N:NominalDiffTime[0])
+                                               (Data.Fixed.N:Fixed[0] <Data.Fixed.E12>_P))
+                                          (Data.Time.Clock.POSIX.$wutcTimeToPOSIXSeconds ww1 ww2)
+                                            `cast`
+                                          (Trans
+                                               (Data.Time.Clock.UTC.N:NominalDiffTime[0])
+                                               (Data.Fixed.N:Fixed[0] <Data.Fixed.E12>_P)))
+                                         `cast`
+                                       (Trans
+                                            (Sym (Data.Fixed.N:Fixed[0] <Data.Fixed.E12>_P))
+                                            (Sym (Data.Time.Clock.UTC.N:NominalDiffTime[0]))) }) of ww { (#,#) ww1 ww2 ->
+                               case tmStart of ww3 { Data.Time.Clock.UTC.UTCTime ww4 ww5 ->
+                               (Data.Time.Clock.UTCDiff.$wdiffUTCTime ww1 ww2 ww4 ww5)
+                                 `cast`
+                               (Trans
+                                    (Sym (Data.Fixed.N:Fixed[0] <Data.Fixed.E12>_P))
+                                    (Sym (Data.Time.Clock.UTC.N:NominalDiffTime[0]))) } },
+                               GHC.Num.fromInteger @ t $dNum Main.currentState3) #) }
+                        Main.Off old
+                        -> (# eta,
+                              (old, GHC.Num.fromInteger @ t $dNum Main.currentState2) #) } }) -}
+7ae0d4b32df26b249797e557870355b3
+  currentState2 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (1) -}
+95eb6ba604526db6deb2e40b342714e6
+  currentState3 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (2) -}
+516de8ab90ff05a25a2e458a65b996ad
+  currentState4 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (0) -}
+daded4a64bca20c13f6f7bacd7be1f62
+  debug ::
+    Control.Monad.Trans.State.Lazy.StateT Main.Tasks GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.debug1
+                  `cast`
+                (Trans
+                     (<Data.Map.Base.Map GHC.Base.String Main.Task>_R
+                      ->_R Sym (GHC.Types.N:IO[0]
+                                    <((), Data.Map.Base.Map GHC.Base.String Main.Task)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Data.Map.Base.Map GHC.Base.String Main.Task>_N
+                               <GHC.Types.IO>_R
+                               <()>_N))) -}
+e1a05e94d248888cdf12134db1bf1bde
+  debug1 ::
+    Data.Map.Base.Map GHC.Base.String Main.Task
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Data.Map.Base.Map GHC.Base.String Main.Task) #)
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: (\ (s1 :: Data.Map.Base.Map GHC.Base.String Main.Task)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (Data.Map.Base.$fShowMap_$cshow
+                           @ [GHC.Types.Char]
+                           @ Main.Task
+                           GHC.Show.$fShow[]_$s$fShow[]1
+                           Main.$fShowTask
+                           s1)
+                        GHC.Types.True
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (GHC.Show.showList__
+                           @ ([GHC.Types.Char], Main.Task)
+                           Main.$s$fShow[]2
+                           (Data.Map.Base.toAscList1
+                              @ [GHC.Types.Char]
+                              @ Main.Task
+                              (GHC.Types.[] @ ([GHC.Types.Char], Main.Task))
+                              s1)
+                           (GHC.Types.[] @ GHC.Types.Char))
+                        GHC.Types.True
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 (# ipv2, (ipv3, s1) #) } }) -}
+3716a0c88079290ee4bb72390602bf0c
+  diffFormat ::
+    Data.Time.Clock.UTC.NominalDiffTime -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,U> -}
+069c8cf7f40c48cdac2acbe489483b10
+  diffFormat' ::
+    Data.Time.Clock.UTC.NominalDiffTime -> [GHC.Types.Char]
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (diff :: Data.Time.Clock.UTC.NominalDiffTime) ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   (Main.diffFormat diff)
+                   (GHC.CString.unpackAppendCString#
+                      " ("#
+                      (GHC.Base.++
+                         @ GHC.Types.Char
+                         (Data.Fixed.showFixed
+                            @ Data.Fixed.E12
+                            Data.Fixed.$fHasResolutionE12_$cresolution
+                              `cast`
+                            (Sym (Data.Fixed.N:HasResolution[0] <Data.Fixed.E12>_N))
+                            GHC.Types.True
+                            diff `cast` (Data.Time.Clock.UTC.N:NominalDiffTime[0]))
+                         Main.diffFormat'1))) -}
+4501b3532b607cf7a35f036e0154aa19
+  diffFormat'1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Base.++
+                   @ GHC.Types.Char
+                   Data.Time.Clock.UTC.$fShowNominalDiffTime2
+                   Main.diffFormat'2) -}
+470767c8e949ba3a734c0946975ccbb0
+  diffFormat'2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ")"#) -}
+6a8d0ff97c16d201e5b97e7530c22963
+  help ::
+    Control.Monad.Trans.State.Lazy.StateT Main.Tasks GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.help1
+                  `cast`
+                (Trans
+                     (<Data.Map.Base.Map GHC.Base.String Main.Task>_R
+                      ->_R Sym (GHC.Types.N:IO[0]
+                                    <((), Data.Map.Base.Map GHC.Base.String Main.Task)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Data.Map.Base.Map GHC.Base.String Main.Task>_N
+                               <GHC.Types.IO>_R
+                               <()>_N))) -}
+056b7a7c8ba1c8176ad8b90ada95f40c
+  help1 ::
+    Data.Map.Base.Map GHC.Base.String Main.Task
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Data.Map.Base.Map GHC.Base.String Main.Task) #)
+  {- Arity: 2, Strictness: <L,U><S,U> -}
+4d28bb0205022a03f1508cd4a8a0e308
+  listTask ::
+    Control.Monad.Trans.State.Lazy.StateT Main.Tasks GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.listTask1
+                  `cast`
+                (Trans
+                     (<Data.Map.Base.Map GHC.Base.String Main.Task>_R
+                      ->_R Sym (GHC.Types.N:IO[0]
+                                    <((), Data.Map.Base.Map GHC.Base.String Main.Task)>_R))
+                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                               <Data.Map.Base.Map GHC.Base.String Main.Task>_N
+                               <GHC.Types.IO>_R
+                               <()>_N))) -}
+e98fda26f0e72a6179a0289e3fbfb397
+  listTask1 ::
+    Data.Map.Base.Map GHC.Base.String Main.Task
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Data.Map.Base.Map GHC.Base.String Main.Task) #)
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: (\ (s1 :: Data.Map.Base.Map GHC.Base.String Main.Task)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        Main.listTask3
+                        GHC.Types.True
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        Main.listTask2
+                        GHC.Types.True
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case ((Main.listTask_go10
+                          Main.$swhen1
+                            `cast`
+                          (Trans
+                               (<Data.Map.Base.Map GHC.Base.String Main.Task>_R
+                                ->_R Sym (GHC.Types.N:IO[0]
+                                              <((),
+                                                Data.Map.Base.Map GHC.Base.String Main.Task)>_R))
+                               (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                         <Data.Map.Base.Map GHC.Base.String Main.Task>_N
+                                         <GHC.Types.IO>_R
+                                         <()>_N)))
+                          s1)
+                         `cast`
+                       (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                            <Data.Map.Base.Map GHC.Base.String Main.Task>_N
+                            <GHC.Types.IO>_R
+                            <()>_N)
+                         s1)
+                        `cast`
+                      (GHC.Types.N:IO[0]
+                           <((), Data.Map.Base.Map GHC.Base.String Main.Task)>_R)
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        Main.listTask3
+                        GHC.Types.True
+                        ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                 (# ipv6,
+                    (ipv7, case ipv5 of wild { (,) a1 s' -> s' }) #) } } } }) -}
+7da00542dfe26208e6c9ccf1fccec194
+  listTask2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Tasks:"#) -}
+1df0fe159a55ec48629401a6b4ea03fa
+  listTask3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "---------------------------------------------------------------"#) -}
+06e84c3d60473348e4b8470f4619a855
+  listTask_go10 ::
+    Control.Monad.Trans.State.Lazy.StateT Main.Tasks GHC.Types.IO ()
+    -> Data.Map.Base.Map [GHC.Types.Char] Main.Task
+    -> Control.Monad.Trans.State.Lazy.StateT Main.Tasks GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,1*U><S,1*U> -}
+87e37f8092b97672bea6af61299e004b
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+fe0f73815ff807fe2e1acfca9b797049
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case Main.code1
+                        (Data.Map.Base.Tip @ GHC.Base.String @ Main.Task)
+                        eta2 of ds { (#,#) ipv ipv1 ->
+                 (# ipv, GHC.Tuple.() #) }) -}
+5f1ab81e762cdda59c97d1959e3b2040
+  main2 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+0976838b9aefcd1971f55cd63ed20324
+  process ::
+    [GHC.Types.Char]
+    -> [[GHC.Types.Char]]
+    -> Control.Monad.Trans.State.Lazy.StateT Main.Tasks GHC.Types.IO ()
+  {- Arity: 2, Strictness: <S,U><L,1*U>,
+     Unfolding: (\ (cmd :: [GHC.Types.Char])
+                   (args :: [[GHC.Types.Char]]) ->
+                 case GHC.Base.eqString cmd Main.process19 of wild {
+                   GHC.Types.False
+                   -> case GHC.Base.eqString cmd Main.process18 of wild1 {
+                        GHC.Types.False
+                        -> case GHC.Base.eqString cmd Main.process17 of wild2 {
+                             GHC.Types.False
+                             -> case GHC.Base.eqString cmd Main.process16 of wild3 {
+                                  GHC.Types.False
+                                  -> case GHC.Base.eqString cmd Main.process15 of wild4 {
+                                       GHC.Types.False
+                                       -> case GHC.Base.eqString cmd Main.process14 of wild5 {
+                                            GHC.Types.False
+                                            -> case GHC.Base.eqString cmd Main.process13 of wild6 {
+                                                 GHC.Types.False
+                                                 -> case GHC.Base.eqString
+                                                           cmd
+                                                           Main.process12 of wild7 {
+                                                      GHC.Types.False
+                                                      -> case GHC.Base.eqString
+                                                                cmd
+                                                                Main.process11 of wild8 {
+                                                           GHC.Types.False
+                                                           -> case GHC.Base.eqString
+                                                                     cmd
+                                                                     Main.process10 of wild9 {
+                                                                GHC.Types.False
+                                                                -> case GHC.Base.eqString
+                                                                          cmd
+                                                                          Main.process9 of wild10 {
+                                                                     GHC.Types.False
+                                                                     -> case GHC.Base.eqString
+                                                                               cmd
+                                                                               Main.process8 of wild11 {
+                                                                          GHC.Types.False
+                                                                          -> case GHC.Base.eqString
+                                                                                    cmd
+                                                                                    Main.process7 of wild12 {
+                                                                               GHC.Types.False
+                                                                               -> Main.process5
+                                                                                    `cast`
+                                                                                  (Trans
+                                                                                       (<Data.Map.Base.Map
+                                                                                           GHC.Base.String
+                                                                                           Main.Task>_R
+                                                                                        ->_R Sym (GHC.Types.N:IO[0]
+                                                                                                      <((),
+                                                                                                        Data.Map.Base.Map
+                                                                                                          GHC.Base.String
+                                                                                                          Main.Task)>_R))
+                                                                                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                                                 <Data.Map.Base.Map
+                                                                                                    GHC.Base.String
+                                                                                                    Main.Task>_N
+                                                                                                 <GHC.Types.IO>_R
+                                                                                                 <()>_N)))
+                                                                               GHC.Types.True
+                                                                               -> Main.debug1
+                                                                                    `cast`
+                                                                                  (Trans
+                                                                                       (<Data.Map.Base.Map
+                                                                                           GHC.Base.String
+                                                                                           Main.Task>_R
+                                                                                        ->_R Sym (GHC.Types.N:IO[0]
+                                                                                                      <((),
+                                                                                                        Data.Map.Base.Map
+                                                                                                          GHC.Base.String
+                                                                                                          Main.Task)>_R))
+                                                                                       (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                                                 <Data.Map.Base.Map
+                                                                                                    GHC.Base.String
+                                                                                                    Main.Task>_N
+                                                                                                 <GHC.Types.IO>_R
+                                                                                                 <()>_N))) }
+                                                                          GHC.Types.True
+                                                                          -> Main.$swhen1
+                                                                               `cast`
+                                                                             (Trans
+                                                                                  (<Data.Map.Base.Map
+                                                                                      GHC.Base.String
+                                                                                      Main.Task>_R
+                                                                                   ->_R Sym (GHC.Types.N:IO[0]
+                                                                                                 <((),
+                                                                                                   Data.Map.Base.Map
+                                                                                                     GHC.Base.String
+                                                                                                     Main.Task)>_R))
+                                                                                  (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                                            <Data.Map.Base.Map
+                                                                                               GHC.Base.String
+                                                                                               Main.Task>_N
+                                                                                            <GHC.Types.IO>_R
+                                                                                            <()>_N))) }
+                                                                     GHC.Types.True
+                                                                     -> Main.$swhen1
+                                                                          `cast`
+                                                                        (Trans
+                                                                             (<Data.Map.Base.Map
+                                                                                 GHC.Base.String
+                                                                                 Main.Task>_R
+                                                                              ->_R Sym (GHC.Types.N:IO[0]
+                                                                                            <((),
+                                                                                              Data.Map.Base.Map
+                                                                                                GHC.Base.String
+                                                                                                Main.Task)>_R))
+                                                                             (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                                       <Data.Map.Base.Map
+                                                                                          GHC.Base.String
+                                                                                          Main.Task>_N
+                                                                                       <GHC.Types.IO>_R
+                                                                                       <()>_N))) }
+                                                                GHC.Types.True
+                                                                -> Main.listTask1
+                                                                     `cast`
+                                                                   (Trans
+                                                                        (<Data.Map.Base.Map
+                                                                            GHC.Base.String
+                                                                            Main.Task>_R
+                                                                         ->_R Sym (GHC.Types.N:IO[0]
+                                                                                       <((),
+                                                                                         Data.Map.Base.Map
+                                                                                           GHC.Base.String
+                                                                                           Main.Task)>_R))
+                                                                        (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                                  <Data.Map.Base.Map
+                                                                                     GHC.Base.String
+                                                                                     Main.Task>_N
+                                                                                  <GHC.Types.IO>_R
+                                                                                  <()>_N))) }
+                                                           GHC.Types.True
+                                                           -> Main.listTask1
+                                                                `cast`
+                                                              (Trans
+                                                                   (<Data.Map.Base.Map
+                                                                       GHC.Base.String Main.Task>_R
+                                                                    ->_R Sym (GHC.Types.N:IO[0]
+                                                                                  <((),
+                                                                                    Data.Map.Base.Map
+                                                                                      GHC.Base.String
+                                                                                      Main.Task)>_R))
+                                                                   (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                             <Data.Map.Base.Map
+                                                                                GHC.Base.String
+                                                                                Main.Task>_N
+                                                                             <GHC.Types.IO>_R
+                                                                             <()>_N))) }
+                                                      GHC.Types.True
+                                                      -> (Main.process4
+                                                            (case args of wild8 {
+                                                               [] -> Main.process3 : nm ds -> nm }))
+                                                           `cast`
+                                                         (Trans
+                                                              (<Data.Map.Base.Map
+                                                                  GHC.Base.String Main.Task>_R
+                                                               ->_R Sym (GHC.Types.N:IO[0]
+                                                                             <((),
+                                                                               Data.Map.Base.Map
+                                                                                 GHC.Base.String
+                                                                                 Main.Task)>_R))
+                                                              (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                        <Data.Map.Base.Map
+                                                                           GHC.Base.String
+                                                                           Main.Task>_N
+                                                                        <GHC.Types.IO>_R
+                                                                        <()>_N))) }
+                                                 GHC.Types.True
+                                                 -> (Main.process4
+                                                       (case args of wild7 {
+                                                          [] -> Main.process3 : nm ds -> nm }))
+                                                      `cast`
+                                                    (Trans
+                                                         (<Data.Map.Base.Map
+                                                             GHC.Base.String Main.Task>_R
+                                                          ->_R Sym (GHC.Types.N:IO[0]
+                                                                        <((),
+                                                                          Data.Map.Base.Map
+                                                                            GHC.Base.String
+                                                                            Main.Task)>_R))
+                                                         (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                   <Data.Map.Base.Map
+                                                                      GHC.Base.String Main.Task>_N
+                                                                   <GHC.Types.IO>_R
+                                                                   <()>_N))) }
+                                            GHC.Types.True
+                                            -> (Main.process2
+                                                  (case args of wild6 {
+                                                     [] -> Main.process3 : nm ds -> nm }))
+                                                 `cast`
+                                               (Trans
+                                                    (<Data.Map.Base.Map GHC.Base.String Main.Task>_R
+                                                     ->_R Sym (GHC.Types.N:IO[0]
+                                                                   <((),
+                                                                     Data.Map.Base.Map
+                                                                       GHC.Base.String
+                                                                       Main.Task)>_R))
+                                                    (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                              <Data.Map.Base.Map
+                                                                 GHC.Base.String Main.Task>_N
+                                                              <GHC.Types.IO>_R
+                                                              <()>_N))) }
+                                       GHC.Types.True
+                                       -> (Main.process2
+                                             (case args of wild5 {
+                                                [] -> Main.process3 : nm ds -> nm }))
+                                            `cast`
+                                          (Trans
+                                               (<Data.Map.Base.Map GHC.Base.String Main.Task>_R
+                                                ->_R Sym (GHC.Types.N:IO[0]
+                                                              <((),
+                                                                Data.Map.Base.Map
+                                                                  GHC.Base.String Main.Task)>_R))
+                                               (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                         <Data.Map.Base.Map
+                                                            GHC.Base.String Main.Task>_N
+                                                         <GHC.Types.IO>_R
+                                                         <()>_N))) }
+                                  GHC.Types.True
+                                  -> (Main.process1
+                                        (case args of wild4 { [] -> Main.process3 : nm ds -> nm }))
+                                       `cast`
+                                     (Trans
+                                          (<Data.Map.Base.Map GHC.Base.String Main.Task>_R
+                                           ->_R Sym (GHC.Types.N:IO[0]
+                                                         <((),
+                                                           Data.Map.Base.Map
+                                                             GHC.Base.String Main.Task)>_R))
+                                          (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                    <Data.Map.Base.Map GHC.Base.String Main.Task>_N
+                                                    <GHC.Types.IO>_R
+                                                    <()>_N))) }
+                             GHC.Types.True
+                             -> (Main.process1
+                                   (case args of wild3 { [] -> Main.process3 : nm ds -> nm }))
+                                  `cast`
+                                (Trans
+                                     (<Data.Map.Base.Map GHC.Base.String Main.Task>_R
+                                      ->_R Sym (GHC.Types.N:IO[0]
+                                                    <((),
+                                                      Data.Map.Base.Map
+                                                        GHC.Base.String Main.Task)>_R))
+                                     (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                               <Data.Map.Base.Map GHC.Base.String Main.Task>_N
+                                               <GHC.Types.IO>_R
+                                               <()>_N))) }
+                        GHC.Types.True
+                        -> Main.help1
+                             `cast`
+                           (Trans
+                                (<Data.Map.Base.Map GHC.Base.String Main.Task>_R
+                                 ->_R Sym (GHC.Types.N:IO[0]
+                                               <((),
+                                                 Data.Map.Base.Map GHC.Base.String Main.Task)>_R))
+                                (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                          <Data.Map.Base.Map GHC.Base.String Main.Task>_N
+                                          <GHC.Types.IO>_R
+                                          <()>_N))) }
+                   GHC.Types.True
+                   -> Main.help1
+                        `cast`
+                      (Trans
+                           (<Data.Map.Base.Map GHC.Base.String Main.Task>_R
+                            ->_R Sym (GHC.Types.N:IO[0]
+                                          <((), Data.Map.Base.Map GHC.Base.String Main.Task)>_R))
+                           (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                     <Data.Map.Base.Map GHC.Base.String Main.Task>_N
+                                     <GHC.Types.IO>_R
+                                     <()>_N))) }) -}
+7467ba4b49219e4cd1343d1970542f43
+  process1 ::
+    GHC.Base.String
+    -> Data.Map.Base.Map GHC.Base.String Main.Task
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Data.Map.Base.Map GHC.Base.String Main.Task) #)
+  {- Arity: 3, Strictness: <S,U><S,U><S,U> -}
+d8c9ac941bc2b9e340315d27d91111f2
+  process10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "list"#) -}
+2066b4f35b498669b881fd5f9f436fbf
+  process11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "l"#) -}
+411a0dd69b1634279ee8cf382b2df0dd
+  process12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "show"#) -}
+076a4e4e77244713f428fc01169aa848
+  process13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "*"#) -}
+583d70bb5e1e66082c12201a1806e3c1
+  process14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "stop"#) -}
+dc15867c0b00f82fd9befc36148d42a2
+  process15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "-"#) -}
+1c4b436bab2f5d8cd34f91f0d2664474
+  process16 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "start"#) -}
+77c77231c944c18b89600ab9f7c966a7
+  process17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "+"#) -}
+3edf93e6170f1103bf1c186eb939d830
+  process18 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "help"#) -}
+189c85c910507535318c273b5d431460
+  process19 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "?"#) -}
+eca0ff1b50e9e5d11a9d99e66de55739
+  process2 ::
+    GHC.Base.String
+    -> Data.Map.Base.Map GHC.Base.String Main.Task
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Data.Map.Base.Map GHC.Base.String Main.Task) #)
+  {- Arity: 3, Strictness: <S,U><S,U><S,U> -}
+3a6da64e27addbfae391681b985420fc
+  process3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "default"#) -}
+e13f04f65173241cdf146f9a02dffa88
+  process4 ::
+    GHC.Base.String
+    -> Data.Map.Base.Map GHC.Base.String Main.Task
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Data.Map.Base.Map GHC.Base.String Main.Task) #)
+  {- Arity: 3, Strictness: <S,U><S,U><S,U> -}
+adeb8a03e819966c129d681ed560a4b8
+  process5 ::
+    Data.Map.Base.Map GHC.Base.String Main.Task
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((), Data.Map.Base.Map GHC.Base.String Main.Task) #)
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: (\ (s1 :: Data.Map.Base.Map GHC.Base.String Main.Task)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        Main.process6
+                        GHC.Types.True
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv, (ipv1, s1) #) }) -}
+511c91eb7c920c7669cbeb5b607892ac
+  process6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "~~~ Invalid command, use help or ?"#) -}
+aba0c0ff96cc047df2366b44a40af3d4
+  process7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "d"#) -}
+ee7aa36c89384e839250a6b53df5d916
+  process8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "quit"#) -}
+eabc332b919428ee120d3f3af08210c6
+  process9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "q"#) -}
+d73f262b8b34d28b1e7bf37b29a0824c
+  rest ::
+    Data.Time.Clock.UTC.NominalDiffTime
+    -> GHC.Integer.Type.Integer -> Data.Time.Clock.UTC.NominalDiffTime
+  {- Arity: 2, Strictness: <S,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.rest1
+                  `cast`
+                (<Data.Time.Clock.UTC.NominalDiffTime>_R
+                 ->_R <GHC.Integer.Type.Integer>_R
+                 ->_R Trans
+                          (Sym (Data.Fixed.N:Fixed[0] <Data.Fixed.E12>_P))
+                          (Sym (Data.Time.Clock.UTC.N:NominalDiffTime[0]))) -}
+5ec54dfdcc6ae58e249e799af5506806
+  rest1 ::
+    Data.Time.Clock.UTC.NominalDiffTime
+    -> GHC.Integer.Type.Integer -> GHC.Integer.Type.Integer
+  {- Arity: 2, Strictness: <S,U><S,U>,
+     Unfolding: (\ (x :: Data.Time.Clock.UTC.NominalDiffTime)
+                   (z :: GHC.Integer.Type.Integer) ->
+                 GHC.Integer.Type.minusInteger
+                   x `cast`
+                   (Trans
+                        (Data.Time.Clock.UTC.N:NominalDiffTime[0])
+                        (Data.Fixed.N:Fixed[0] <Data.Fixed.E12>_P))
+                   (GHC.Integer.Type.timesInteger
+                      (GHC.Integer.Type.timesInteger (Main.value x z) z)
+                      Data.Fixed.$fHasResolutionE5)) -}
+6cf1080e4388472da1f9f52b6ca46a96
+  showTask ::
+    GHC.Base.String
+    -> Control.Monad.Trans.State.Lazy.StateT Main.Tasks GHC.Types.IO ()
+  {- Arity: 3, Strictness: <S,U><S,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.process4
+                  `cast`
+                (<GHC.Base.String>_R
+                 ->_R Trans
+                          (<Data.Map.Base.Map GHC.Base.String Main.Task>_R
+                           ->_R Sym (GHC.Types.N:IO[0]
+                                         <((), Data.Map.Base.Map GHC.Base.String Main.Task)>_R))
+                          (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                    <Data.Map.Base.Map GHC.Base.String Main.Task>_N
+                                    <GHC.Types.IO>_R
+                                    <()>_N))) -}
+d11a56fda512f7ba2d9da4f0057a613e
+  startTask ::
+    GHC.Base.String
+    -> Control.Monad.Trans.State.Lazy.StateT Main.Tasks GHC.Types.IO ()
+  {- Arity: 3, Strictness: <S,U><S,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.process1
+                  `cast`
+                (<GHC.Base.String>_R
+                 ->_R Trans
+                          (<Data.Map.Base.Map GHC.Base.String Main.Task>_R
+                           ->_R Sym (GHC.Types.N:IO[0]
+                                         <((), Data.Map.Base.Map GHC.Base.String Main.Task)>_R))
+                          (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                    <Data.Map.Base.Map GHC.Base.String Main.Task>_N
+                                    <GHC.Types.IO>_R
+                                    <()>_N))) -}
+8f8587ee5ecd1461a0ec6500d994cf48
+  stopTask ::
+    GHC.Base.String
+    -> Control.Monad.Trans.State.Lazy.StateT Main.Tasks GHC.Types.IO ()
+  {- Arity: 3, Strictness: <S,U><S,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.process2
+                  `cast`
+                (<GHC.Base.String>_R
+                 ->_R Trans
+                          (<Data.Map.Base.Map GHC.Base.String Main.Task>_R
+                           ->_R Sym (GHC.Types.N:IO[0]
+                                         <((), Data.Map.Base.Map GHC.Base.String Main.Task)>_R))
+                          (Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                    <Data.Map.Base.Map GHC.Base.String Main.Task>_N
+                                    <GHC.Types.IO>_R
+                                    <()>_N))) -}
+ae92a455c857ae012e6e3f2e1a1f2e13
+  value ::
+    Data.Time.Clock.UTC.NominalDiffTime
+    -> GHC.Integer.Type.Integer -> GHC.Integer.Type.Integer
+  {- Arity: 2, Strictness: <S,U><S,U>,
+     Unfolding: (\ (x :: Data.Time.Clock.UTC.NominalDiffTime)
+                   (z :: GHC.Integer.Type.Integer) ->
+                 case GHC.Integer.Type.eqInteger#
+                        z
+                        Main.currentState4 of wild { DEFAULT ->
+                 case GHC.Prim.tagToEnum# @ GHC.Types.Bool wild of wild1 {
+                   GHC.Types.False
+                   -> GHC.Integer.Type.divInteger
+                        (Data.Time.Clock.UTC.$fRealFracNominalDiffTime_$cfloor
+                           @ GHC.Integer.Type.Integer
+                           GHC.Real.$fIntegralInteger
+                           x)
+                        z
+                   GHC.Types.True
+                   -> GHC.Real.divZeroError @ GHC.Integer.Type.Integer } }) -}
+instance [safe] GHC.Show.Show [Main.Task] = Main.$fShowTask
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
