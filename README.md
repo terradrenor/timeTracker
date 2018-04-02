@@ -7,7 +7,7 @@
   - `start [task-name]`
   - `stop  [task-name]`
   - `show  [task-name]`
-  - `all   [start|stop|show]
+  - `all   [start|stop|show]`
   - `list`
   - `help`
   - `quit`
