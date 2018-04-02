@@ -123,6 +123,7 @@ listTask = do
     status IsOff = "stopped"
     status IsOn  = "started"
 
+currentState :: Maybe Task -> IO (NominalDiffTime, TaskState)
 currentState (Just (On old tmStart)) = do
   tmNow <- getCurrentTime
   return (diffUTCTime (addUTCTime old tmNow) tmStart, IsOn)
