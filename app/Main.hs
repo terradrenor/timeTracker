@@ -8,6 +8,8 @@ import           Data.Map as Mp
 data Task = On NominalDiffTime UTCTime | Off NominalDiffTime 
     deriving Show
 
+data TaskState = NoEx | IsOff | IsOn
+
 type Tasks = Mp.Map String Task
 
 main :: IO ()
@@ -21,12 +23,13 @@ code = do
   process cmd args
   when (cmd /= "quit" && cmd /= "q") code
 
-process :: [Char] -> [[Char]] -> StateT Tasks IO ()
+process :: String -> [String] -> StateT Tasks IO ()
 process cmd args
   | cmd == "?" || cmd == "help"  = help
   | cmd == "+" || cmd == "start" = startTask name
   | cmd == "-" || cmd == "stop"  = stopTask name
   | cmd == "*" || cmd == "show"  = showTask name
+  | cmd == "a" || cmd == "all"   = forAll proc
   | cmd == "l" || cmd == "list"  = listTask
   | cmd == "q" || cmd == "quit"  = return ()
   | cmd == "d"                   = debug
@@ -35,6 +38,17 @@ process cmd args
     name = case args of
       nm : _ -> nm
       _      -> "default"
+    proc = case args of
+      "start" : _ -> startTask
+      "+" : _     -> startTask
+      "stop" : _  -> stopTask
+      "-" : _     -> stopTask
+      _           -> showTask
+
+forAll :: (String -> StateT Tasks IO ()) -> StateT Tasks IO ()
+forAll proc = do
+  m <- get
+  mapM_ proc $ Mp.keys m
 
 help :: StateT Tasks IO ()
 help = liftIO $ do 
@@ -43,6 +57,7 @@ help = liftIO $ do
   putStrLn "start [task-name]"
   putStrLn "stop  [task-name]"
   putStrLn "show  [task-name]"
+  putStrLn "all   [start|stop|show]"
   putStrLn "list"
   putStrLn "help"
   putStrLn "quit"
@@ -51,6 +66,7 @@ help = liftIO $ do
   putStrLn "start: +"
   putStrLn "stop:  -"
   putStrLn "show:  *"
+  putStrLn "all:   a"
   putStrLn "list:  l"
   putStrLn "help:  ?"
   putStrLn "quit:  q"
@@ -65,9 +81,9 @@ startTask name = do
   put $ Mp.insert name (On diff tmNow) m
   liftIO $ putStrLn $ "Task <" ++ name ++ "> " ++ status st ++ "started"
   where
-    status 0 = "added and "
-    status 1 = ""
-    status 2 = "was already "
+    status NoEx  = "added and "
+    status IsOff = ""
+    status IsOn  = "was already "
 
 stopTask :: String -> StateT Tasks IO ()
 stopTask name = do
@@ -77,9 +93,9 @@ stopTask name = do
   put $ Mp.insert name (Off diff) m
   liftIO $ putStrLn $ "Task <" ++ name ++ "> " ++ status st ++ "stopped"
   where
-    status 0 = "added and "
-    status 1 = "was already "
-    status 2 = ""
+    status NoEx  = "added and "
+    status IsOff = "was already "
+    status IsOn  = ""
 
 showTask :: String -> StateT Tasks IO ()
 showTask name = do
@@ -89,9 +105,9 @@ showTask name = do
   liftIO $ putStrLn $ "Task <" ++ name ++ "> " ++ status st
   liftIO $ putStrLn $ "Current time for task <" ++ name ++ ">: " ++ diffFormat' diff
   where
-    status 0 = "not exist"
-    status 1 = "stopped"
-    status 2 = "started"
+    status NoEx  = "not exist"
+    status IsOff = "stopped"
+    status IsOn  = "started"
 
 listTask :: StateT Tasks IO ()
 listTask = do
@@ -104,15 +120,14 @@ listTask = do
     listLine (name, task) = liftIO $ do
       (diff, st) <- currentState $ Just task
       putStrLn $ "<" ++ name ++ ">: " ++ status st ++ ", current time: " ++ diffFormat' diff
-    status 1 = "stopped"
-    status 2 = "started"
+    status IsOff = "stopped"
+    status IsOn  = "started"
 
-currentState :: Num t => Maybe Task -> IO (NominalDiffTime, t)
 currentState (Just (On old tmStart)) = do
   tmNow <- getCurrentTime
-  return (diffUTCTime (addUTCTime old tmNow) tmStart, 2)
-currentState (Just (Off old)) = return (old, 1)
-currentState Nothing = return (0, 0)
+  return (diffUTCTime (addUTCTime old tmNow) tmStart, IsOn)
+currentState (Just (Off old)) = return (old, IsOff)
+currentState Nothing = return (0, NoEx)
 
 debug :: StateT Tasks IO ()
 debug = do
@@ -120,13 +135,13 @@ debug = do
   liftIO $ print m
   liftIO $ print $ Mp.toList m
 
-diffFormat' :: NominalDiffTime -> [Char]
+diffFormat' :: NominalDiffTime -> String
 diffFormat' diff = diffFormat diff ++ " (" ++ show diff ++ ")"
 
 diffFormat :: NominalDiffTime -> String
 diffFormat x
-  | x >= 24*60*60 = show (value x 24*60*60) ++ "d " -- ++ (diffFormat $ rest x 24*60*60)
-  | x >= 60*60 = show (value x 60*60) ++ "h " ++ diffFormat (rest x 60*60)
+  | x >= 24*60*60 = show (value x (24*60*60)) ++ "d " ++ diffFormat (rest x (24*60*60))
+  | x >= 60*60 = show (value x (60*60)) ++ "h " ++ diffFormat (rest x (60*60))
   | x >= 60 = show (value x 60) ++ "m " ++ diffFormat (rest x 60)
   | otherwise = show x
 
